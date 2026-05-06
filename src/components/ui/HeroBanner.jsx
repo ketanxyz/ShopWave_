@@ -23,7 +23,7 @@ export default function HeroBanner() {
   const banner = banners[current];
 
   return (
-    <div className="relative h-[520px] md:h-[620px] overflow-hidden mt-[72px]">
+    <div className="relative h-[520px] md:h-[620px] overflow-hidden">
       {/* Background Image */}
       <div
         className={`absolute inset-0 transition-opacity duration-500 ${isTransitioning ? "opacity-0" : "opacity-100"}`}
