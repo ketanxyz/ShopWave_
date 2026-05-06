@@ -1,0 +1,117 @@
+ShopWave Project Documentation
+==============================
+
+Overview
+--------
+ShopWave is a modern, responsive e-commerce storefront built with React and Vite. It showcases a clean product browsing experience, category navigation, search support, product detail pages, cart management, checkout flow, and a terms page.
+
+This project is a front-end shopping demo with mock product data and stateful cart behavior persisted in the browser.
+
+Key Features
+------------
+- Responsive layout for desktop and mobile screens.
+- Sticky top navigation bar with category links, search input, shopping cart icon, and mobile hamburger menu.
+- Hero banner slider with promotional messaging and CTA buttons.
+- Category grid highlighting core product categories.
+- Featured product listing section with highlighted items.
+- Product grid with filtering by category and search query.
+- Individual product detail pages with:
+  - image gallery
+  - rating and review display
+  - price, discount, and stock status
+  - description, tags, and product specs
+  - quantity controls and add-to-cart button
+- Shopping cart page with item list, quantity adjustment, remove item, and subtotal.
+- Checkout page with cart summary and order details interface.
+- Terms & conditions page with policy sections.
+- Suggested / related product modules on home, cart, and product pages.
+- Cart persistence using localStorage.
+
+Tech Stack
+----------
+- React 19
+- React Router DOM 7
+- Vite 4/5 compatible build tooling
+- Tailwind CSS for styling
+- ESLint for linting
+- PostCSS / Autoprefixer for build processing
+
+Project Structure
+-----------------
+- `src/App.jsx` — app routing and provider setup
+- `src/main.jsx` — app bootstrap entry
+- `src/index.css` — global Tailwind and base styles
+- `src/App.css` — utility component styles
+- `src/context/CartContext.jsx` — cart state management and persistence
+- `src/data/products.js` — mock products, categories, banners, and helper selectors
+- `src/components/layout/` — Navbar, Layout wrapper, Footer
+- `src/components/ui/` — homepage sections, hero, category grid, featured products, promo banner, suggested products
+- `src/components/product/` — product grid and card components
+- `src/pages/` — Home, Product, Cart, Checkout, Terms page views
+
+Routing
+-------
+Defined in `src/App.jsx` via React Router:
+- `/` — Home page
+- `/product/:id` — Product detail page
+- `/cart` — Shopping cart page
+- `/checkout` — Checkout page
+- `/terms` — Terms & conditions page
+
+Core Behavior
+-------------
+- Product lookup, filtering, and search rely on the static JS product dataset.
+- Cart actions are handled with `CartContext` and reducer actions: `ADD`, `REMOVE`, `UPDATE_QTY`, `CLEAR`, `LOAD`.
+- Cart contents are loaded from and saved to `localStorage` automatically.
+
+Development Commands
+--------------------
+From the project root, use:
+- `npm install` — install dependencies
+- `npm run dev` — run the app locally with Vite
+- `npm run build` — build production assets
+- `npm run preview` — preview production build locally
+- `npm run lint` — run ESLint checks
+
+Customization Notes
+-------------------
+- Product data can be updated in `src/data/products.js`.
+- Category links in the navbar are generated from a static list in `Navbar.jsx`.
+- Hero slides are defined in `src/data/products.js` under `banners`.
+- Search uses query string navigation to filter the home product grid.
+- The layout holds the top-level navbar and footer, while page content is rendered in an `Outlet`.
+
+Styling Notes
+-------------
+- Tailwind CSS is used throughout via utility classes.
+- Global styles and base Tailwind directives are configured in `src/index.css`.
+- Reusable classes like `.btn-primary`, `.btn-outline`, and `.card-hover` are defined in `src/index.css`.
+- The navbar uses fixed positioning with a translucent background on scroll.
+
+Known Limitations
+-----------------
+- This is a front-end only demo with no backend or real payment processing.
+- Product data is static, not loaded from an API.
+- Search and category filtering are performed client-side only.
+- Checkout page is a UI flow without order submission.
+
+Suggested Improvements
+----------------------
+- Add real API integration for products and inventory.
+- Implement user authentication / account pages.
+- Add product reviews and ratings from a backend.
+- Add payment checkout integration.
+- Improve accessibility and keyboard navigation for all interactive controls.
+- Add unit and integration tests.
+
+Further Documentation
+---------------------
+- `package.json` — dependency and npm script reference.
+- `README.md` — existing Vite React starter notes.
+- Tailwind config is in `tailwind.config.js`.
+- Vite config is in `vite.config.js`.
+- ESLint configuration is in `eslint.config.js`.
+
+Contact / Ownership
+-------------------
+This documentation was generated from the current ShopWave project source tree and reflects the implementation state of the repository at the time of creation.
